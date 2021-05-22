@@ -1,0 +1,84 @@
+PEXELS API;
+563492ad6f917000010000010f2c2ff2035a42de9d76761d3d47efaf
+
+       SingleChildScrollView(
+        child: Column(
+          children: [
+            Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              elevation: 5,
+              margin: EdgeInsets.all(12),
+              child: Container(
+                height: 490,
+                width: double.infinity,
+                child: Column(
+                  children: [
+                    Container(
+                      height: 400,
+                      width: double.infinity,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushNamed(Fullscreen.routeName, arguments: id);
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              topRight: Radius.circular(20)),
+                          child: CachedNetworkImage(
+                            imageUrl: image.imageUrl,
+                            fit: BoxFit.cover,
+                            width: double.infinity,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        IconButton(
+                            icon: Icon(Icons.phone_android),
+                            onPressed: () {
+                              Navigator.of(context).pushNamed(
+                                  Fullscreen.routeName,
+                                  arguments: id);
+                            }),
+                        Spacer(),
+                        IconButton(
+                            icon: Icon(Icons.download_sharp),
+                            onPressed: () {
+                              _downloadImage();
+                            }),
+                        IconButton(
+                            icon: Icon(Icons.favorite), onPressed: () {}),
+                      ],
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(width: 1, color: Colors.black)),
+                      height: 30,
+                      width: 280,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintStyle: TextStyle(fontSize: 14),
+                          hintText: '\t\t\t\tLeave a comment',
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Container(
+                height: 7650,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(120),
+                  ),
+                ))
+          ],
+        ),
+      ),
